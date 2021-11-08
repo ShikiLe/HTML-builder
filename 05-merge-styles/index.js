@@ -6,14 +6,13 @@ let stylesStr = '';
 
 
 async function copyStyles () {
-  fs.writeFile(path.join('05-merge-styles', 'project-dist', 'bundle.css'), '', (err) => {
+  await fs.writeFile(path.join('05-merge-styles', 'project-dist', 'bundle.css'), '', (err) => {
     if (err) throw err;
   });
+
   try {
     const files = await fs.readdir(dirPath, { encoding: 'utf-8', withFileTypes: true });
-
     for (let file of files) {
-
       if (file.isFile() && `${path.extname(file.name).slice(1)}` === 'css') {   
         const currFile =  await fs.readFile(path.join('05-merge-styles', 'styles', `${file.name}`), 'utf-8');
         stylesStr += currFile;
@@ -26,7 +25,10 @@ async function copyStyles () {
     err => {
       if (err) throw err;
     });
+    stylesStr = '';
 }
 
 copyStyles();
+
+
 
