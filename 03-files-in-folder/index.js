@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-const dirPath = '/RSSchool/HTML-builder/03-files-in-folder/secret-folder';
+const dirPath = path.resolve('../HTML-builder/03-files-in-folder/secret-folder');
 
 fs.readdir(dirPath, { encoding: 'utf-8', withFileTypes: true })
   .then((filenames) => {
@@ -20,3 +20,5 @@ fs.readdir(dirPath, { encoding: 'utf-8', withFileTypes: true })
   .catch((err) => {
     console.log(err);
   });
+
+  console.log(dirPath)
