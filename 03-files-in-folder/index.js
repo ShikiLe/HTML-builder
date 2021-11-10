@@ -20,5 +20,3 @@ fs.readdir(dirPath, { encoding: 'utf-8', withFileTypes: true })
   .catch((err) => {
     console.log(err);
   });
-
-  console.log(dirPath)
