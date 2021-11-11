@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-const dirPath = path.resolve('../HTML-builder/05-merge-styles/styles');
+const dirPath = path.resolve('./05-merge-styles/styles');
 let stylesStr = '';
 
 
